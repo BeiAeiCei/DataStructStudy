@@ -2,7 +2,41 @@
 #include <malloc.h>
 
 #define LIST_MAX_LENGTH 10
-
+/*---- sequentialInsertTest begins. ----
+After initialization, the list is: 3 5 2 7 4 
+Now insert to the first, the list is: 8 3 5 2 7 4
+Now insert to the last, the list is: 8 3 5 2 7 4 9
+Now insert beyond the tail.
+Cannot insert element: the position 8 is bigger than the list length 7.
+The list is:8 3 5 2 7 4 9 
+Inserting 10.
+10 8 3 5 2 7 4 9 
+Inserting 11.
+11 10 8 3 5 2 7 4 9
+Inserting 12.
+12 11 10 8 3 5 2 7 4 9
+Inserting 13.
+Cannot insert element: list full.
+12 11 10 8 3 5 2 7 4 9
+Inserting 14.
+Cannot insert element: list full.
+12 11 10 8 3 5 2 7 4 9
+---- sequentialInsertTest ends. ----
+---- sequentialDeleteTest begins. ----
+After initialization, the list is: 3 5 2 7 4
+Now delete the first, the list is: 5 2 7 4
+Now delete the last, the list is: 5 2 7
+Now delete the second, the list is: 5 7
+Now delete the 5th, the list is: Cannot delete element: the position 5 is beyond the list length 2.
+5 7
+Now delete the (-6)th, the list is: Invalid position: -6.
+5 7
+---- sequentialDeleteTest ends. ----
+The address of the structure: 1994304
+The address of actualLength: 1994304
+The address of data: 1994308
+The address of actual data: 1994308
+The address of second data: 1994312*/
 /**
  * Linear list of integers. The key is data.
  */
