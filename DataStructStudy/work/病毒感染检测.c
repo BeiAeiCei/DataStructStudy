@@ -44,7 +44,7 @@ int main() {
     scanf("%s", p);
     int lenp = strlen(p);
     char temp[2 * lenp + 1];
-    temp[0] = '\0';  // 初始化 temp 数组
+    temp[0] = '\0';  // 初始化 temp 数组 因为拼接是从第1个位置开始的 第 0 个位置未被赋值
 
     strcat(temp, p);
     strcat(temp, p);
