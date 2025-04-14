@@ -1,6 +1,7 @@
 #include<iostream>
 #define MAXSIZE 10
 using namespace std;
+// UTF-8
 // 结构体
 typedef struct 
 {

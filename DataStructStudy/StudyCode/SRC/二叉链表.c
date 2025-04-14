@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> 
 #include "E:\code\DataStructStudy\StudyCode\include\BitTree.h" // 包含二叉树的定义和函数声明
-
+// UTF-8
 int main() {
     // 创建根节点并检查分配是否成功
     BitTree Head = createNode(1);
