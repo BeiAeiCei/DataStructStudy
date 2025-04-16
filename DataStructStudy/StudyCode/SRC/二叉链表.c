@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> 
 #include "E:\code\DataStructStudy\StudyCode\include\BitTree.h" // 包含二叉树的定义和函数声明
-// UTF-8
+
 int main() {
     // 创建根节点并检查分配是否成功
     BitTree Head = createNode(1);
@@ -36,6 +36,20 @@ int main() {
     }
     Head->rchild->rchild = createNode(0); // 右子节点的右孩子，data=0
     PreOder(Head); // 先序遍历输出树的节点值
+    printf("\n");
+    InOrder(Head); // 中序遍历输出树的节点值
+    printf("\n");
+    LastOrder(Head); // 后序遍历输出树的节点值
+    printf("\n");
+    PreOder_NonRec(Head); // 非递归先序遍历输出树的节点值
+    printf("\n");
+    InOrder_NonRec(Head); // 非递归中序遍历输出树的节点值
+    printf("\n");
+    LastOrder_NonRec(Head); // 非递归后序遍历输出树的节点值
+    printf("\n");
+    LevelOder(Head); // 层序遍历输出树的节点值
+    printf("\n");
+    
     // 释放所有内存
     freeTree(Head);
     return 0;
