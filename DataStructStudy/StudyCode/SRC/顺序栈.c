@@ -1,66 +1,66 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include "E:\code\study\data-struct-study-1\DataStructStudy-1\DataStructStudy\StudyCode\include\UTF-8.h"
 
-#define MAX_SIZE 100 // 定义最大容量
-// GB 2312
-// 定义栈的结构体
+#define MAX_SIZE 100 // 
+
 typedef struct Stack {
-    int data[MAX_SIZE]; // 顺序栈是由数组实现
-    int top; // 栈顶指针
-    int base; // 栈底指针
+    int data[MAX_SIZE]; 
+    int top; 
+    int base; 
 } Stack;
 
-// 初始化栈
+// 
 void InitialStack(Stack *S){
     S->top = 0;
     S->base = 0;
 }
 
-// 判断栈是否空
+
 bool IsEmpty(Stack *S){
     if(S->top == S->base){
-        printf("栈空\n");
-        return true;
-    }
-    return false;
-}
-// 判断栈是否满
-bool IsFull(Stack *S){
-    if(S->top == MAX_SIZE){
-        printf("栈满\n");
+        printf("???\n");
         return true;
     }
     return false;
 }
 
-// 入栈
+bool IsFull(Stack *S){
+    if(S->top == MAX_SIZE){
+        printf("???\n");
+        return true;
+    }
+    return false;
+}
+
+
 void Push(Stack *S , int e){
     if(!IsFull(S)){
         S->data[S->top] = e;
         S->top++;
-        printf("入栈成功\n");
+        printf("??????\n");
     }else{
-        printf("入栈失败，栈满\n");
+        printf("??????????\n");
     }
 }
 
-// 出栈
+// ???
 void Pop(Stack *S , int* e){
     if(!IsEmpty(S)){
         S->top--;
         *e = S->data[S->top];
-        printf("出栈成功 ");
+        printf("?????? ");
     }else{
-        printf("栈空，出栈失败\n");
+        printf("??????????\n");
     }
 }
 
-// 获取栈顶元素
+// ?????????
 int GetTop(Stack *S){
     if(!IsEmpty(S)){
         return S->data[S->top-1];
     }else{
-        printf("栈空\n");
+        printf("???\n");
         return -1;
     }
 }
@@ -72,7 +72,7 @@ int main(){
     for(int i = 0; i < 10; i++){
         Push(&S , i); 
     }
-    printf("栈顶元素为 %d\n", GetTop(&S));
+    printf("??????? %d\n", GetTop(&S));
     for(int i = 0; i < 10; i++){
         Pop(&S , &e);
         printf("%d\n", e);

@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include "E:\code\study\data-struct-study-1\DataStructStudy-1\DataStructStudy\StudyCode\include\UTF-8.h"
+
 // UTF-8
 // j是当前匹配串的移动位置，next[j]是当前匹配串的最长公共前后缀长度
 // 计算next数组
