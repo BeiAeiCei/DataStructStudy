@@ -1,30 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string>
+#include <stack>
+using namespace std;
 typedef struct{
 	int weight;
   	int parent,lch,rch;
 }HTNode,*HuffmanTree;
-// 选择两个权值最小且未被选中的节点
+
+typedef string * HuffmanCode;
+
 void Select(HuffmanTree HT, int n, int *s1, int *s2) {
-    int min1 = 0x3f3f3f3f, min2 = 0x3f3f3f3f; // 初始化为极大值
-    *s1 = *s2 = -1;
+    // 找第一个最小值
+    *s1 = -1;
+    int min = 0x3f3f3f3f;
+    for(int i = 0; i < n; i++) {
+        if(HT[i].parent == -1 && HT[i].weight < min) {
+            min = HT[i].weight;
+            *s1 = i;
+        }
+    }
     
-    for (int i = 0; i < n; i++) {
-        if (HT[i].parent == -1) { // 未被选中的节点
-            if (HT[i].weight < min1) {
-                min2 = min1;
-                *s2 = *s1;
-                min1 = HT[i].weight;
-                *s1 = i;
-            } else if (HT[i].weight < min2) {
-                min2 = HT[i].weight;
-                *s2 = i;
-            }
+    // 找第二个最小值
+    *s2 = -1;
+    min = 0x3f3f3f3f;
+    for(int i = 0; i < n; i++) {
+        if(HT[i].parent == -1 && i != *s1 && HT[i].weight < min) {
+            min = HT[i].weight;
+            *s2 = i;
         }
     }
 }
-
 void CreatHUFFMANTree(HuffmanTree *HT, int n) {
     if(n <= 1) return;
     int m = 2*n - 1; // 2n-1个结点
@@ -61,5 +67,31 @@ void PrintHuffmanTree(HuffmanTree HT, int m) {
     for (int i = 0; i < m; i++) {
         printf("%-4d  %-4d  %-6d  %-6d  %-6d\n", 
                i, HT[i].weight, HT[i].parent, HT[i].lch, HT[i].rch);
+    }
+}
+
+void CreatHuffmanCode(HuffmanTree HT , HuffmanCode &HC , int n){
+    HC = new string[n]; // 创建哈夫曼编码数组
+    stack<char> cd;
+    for(int i = 0;i < n;i++){
+        int start = n - 1; // 编码起始位置
+        int c = i, f = HT[i].parent; // 当前结点和父结点
+        while(f != -1){
+            if(HT[f].lch == c) cd.push('0'); // 左孩子编码为0
+            else cd.push('1'); // 右孩子编码为1
+            c = f; // 更新当前结点
+            f = HT[f].parent; // 更新父结点
+        }
+        while(!cd.empty()){
+            HC[i] += cd.top(); // 取出栈顶元素
+            cd.pop(); // 弹出栈顶元素
+        }
+    }
+}
+
+void PrintHuffmanCode(HuffmanCode HC, int n) {
+    printf("\n哈夫曼编码：\n");
+    for (int i = 0; i < n; i++) {
+        printf("结点 %d: %s\n", i, HC[i].c_str()); // 打印哈夫曼编码
     }
 }

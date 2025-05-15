@@ -1,0 +1,11 @@
+{
+    "files.autoGuessEncoding": false,  // 自动猜测
+    "files.encoding": "utf8",  // 文件编码格式
+    "files.associations": {
+        "*.scpp": "cpp",
+        "*.swcu": "cpp",
+        "huffmantree.h": "c",
+        "stdbool.h": "c",
+        "string.h": "c"
+    }
+}
