@@ -4,8 +4,8 @@
 #include <stack>
 #include <iostream>
 using namespace std;
-#include "E:\code\study\data-struct-study-1\DataStructStudy-1\DataStructStudy\StudyCode\include\HuffmanTree.h"
-#include "E:\code\study\data-struct-study-1\DataStructStudy-1\DataStructStudy\StudyCode\include\UTF-8.h"
+#include "DataStructStudy\DataStructStudy\StudyCode\include\HuffmanTree.h"
+#include "DataStructStudy\DataStructStudy\StudyCode\include\UTF-8.h"
 int main(){
     HuffmanTree HT;
     HuffmanCode HC;
