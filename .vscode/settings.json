@@ -6,6 +6,7 @@
         "*.swcu": "cpp",
         "huffmantree.h": "c",
         "stdbool.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "utf-8.h": "c"
     }
 }

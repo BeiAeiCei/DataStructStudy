@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdbool.h>
-#include "DataStructStudy\DataStructStudy\StudyCode\include\UTF-8.h"
+#include "DataStructStudy\StudyCode\include\UTF-8.h"
 
 #define MAX_SIZE 100 // 
 

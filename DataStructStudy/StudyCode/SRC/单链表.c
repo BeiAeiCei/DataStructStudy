@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include"DataStructStudy\StudyCode\include\Link.h"
-#include "DataStructStudy\DataStructStudy\StudyCode\include\UTF-8.h"
+#include "DataStructStudy\StudyCode\include\UTF-8.h"
 
 int main(){
     struct Node *list = Init_Link();
