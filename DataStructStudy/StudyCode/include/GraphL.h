@@ -14,6 +14,7 @@ typedef struct VNode{
 typedef struct ArcNode{
     int adjvex;                     // 边指向哪一个结点(就是顶点下标)
     struct ArcNode *nextarc;        // 指向下一个邻接点的指针
+    int weight;                     // 边的权重（如果是无权图可以不使用）
 }ArcNode;
 
 // 图的邻接表表示
