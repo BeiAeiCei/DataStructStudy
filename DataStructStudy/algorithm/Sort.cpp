@@ -76,3 +76,34 @@ void QuickSort(int A[] , int low , int high){
         QuickSort(A, pivotIndex + 1, high); // 对基准右侧进行快速排序
     }
 }
+
+
+// 堆排序
+// 构建最大堆
+void BuildMaxHeap(int A[] , int len){
+    for(int i = len/2;i>0;i--){
+        HeadAdjust(A,i,len);
+    }
+}
+
+// 调整堆
+// A[]为堆数组，k为当前节点的索引，len为堆的长度
+void HeadAdjust(int A[] , int k, int len){
+    A[0] = A[k];
+    for(int i = 2*k; i <= len; i *= 2){     // 从k的左子节点开始
+        if(i < len && A[i] < A[i + 1]) i++; // 如果右子节点存在且大于左子节点，则选择右子节点
+        if(A[0] >= A[i]) break;             // 如果父节点大于等于子节点，结束调整
+        A[k] = A[i];                        // 将子节点上移
+        k = i; // 更新k为当前子节点
+    }
+        A[k] = A[0]; // 将父节点放到正确位置
+}
+
+
+void HeapSort(int A[], int len){
+    BuildMaxHeap(A, len); // 构建最大堆
+    for(int i = len; i > 1; i--){ // 从最后一个元素开始
+        swap(A[1], A[i]); // 将最大元素放到末尾
+        HeadAdjust(A, 1, i - 1); // 调整堆
+    }
+}
