@@ -60,9 +60,9 @@ void ShellSort(int A[], int n) {
 int Partition(int A[] , int low , int high){
     int pivot = A[low]; // 选择第一个元素作为基准
     while(low < high){
-        while(low < high && A[high] >= pivot) high--; // 从右向左找到第一个小于pivot的元素
+        while(low < high && A[high] >= pivot) high--; // 从右向左找到第一个大于pivot的元素
         A[low] = A[high]; // 将该元素放到low位置
-        while(low < high && A[low] <= pivot) low++; // 从左向右找到第一个大于pivot的元素
+        while(low < high && A[low] <= pivot) low++; // 从左向右找到第一个小于pivot的元素
         A[high] = A[low]; // 将该元素放到high位置
     }
     A[low] = pivot; // 将基准元素放到正确位置
